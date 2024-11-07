@@ -35,11 +35,15 @@
     </div>
 </footer>
 
+
 <?php
-// Carregar script.js se ele existir no caminho especificado
-if (file_exists($_SERVER['DOCUMENT_ROOT'] . '/assets/js/script.js')) {
-    echo '<script src="/assets/js/script.js"></script>';
-}
+// Carrega JavaScript global 
+?>
+<script src="/script.js"></script>
+
+<?php
+// Se existe o arquivo 'script.js' na pasta da página, carrega ele:
+if (file_exists('script.js')) echo '<script src="script.js"></script>';
 ?>
 
 </body>

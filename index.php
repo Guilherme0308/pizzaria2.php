@@ -1,36 +1,26 @@
 <?php
-
-// Inclui o arquivo de configuração global do aplicativo:
 require($_SERVER['DOCUMENT_ROOT'] . '/_config.php');
+session_start(); // Inicia a sessão para manipular o carrinho
 
-/**
- * Define o título desta página:
- * 
- *  → Na página inicial usaremos o 'slogan' do site.
- */
-$page_title = $site_slogan;
+// Verifica se o carrinho já existe na sessão
+if (!isset($_SESSION['carrinho'])) {
+    $_SESSION['carrinho'] = [];
+}
 
-
-
-// Define o conteúdo principal desta página:
-// Define o conteúdo principal desta página:
 $page_article = <<<HTML
-<section class="home-banner">
-    <img src="/src/img/pizza-5107039_640.jpg" alt="Pizza deliciosa" class="banner">
-    <img src="/src/img/logo_pizzaria.png" alt="Logo da Pizzaria" class="logo-banner">
-    <button type="button" class="banner-button">Fazer Pedido</button>
+<!-- HTML Structure -->
+<section class="banner">
+    <div class="banner-overlay">
+        <a href="carrinho.php" class="banner-button">Fazer Pedido</a>
+    </div>
 </section>
 HTML;
 
-// Inicia a seção de pizzas
 $page_article .= '<section class="pizzas-content">';
-
-$sql = "SELECT nome, preco, categoria, descricao, imagem FROM produtos";
+$sql = "SELECT id, nome, preco, categoria, descricao, imagem FROM produtos"; // Inclui o ID para identificar o produto
 $result = $conn->query($sql);
 
-// Verifique se os dados estão disponíveis
 if ($result && $result->num_rows > 0) {
-    // Percorra cada registro de pizza e crie um cartão
     while ($row = $result->fetch_assoc()) {
         $page_article .= <<<HTML
             <div class="pizza-card">
@@ -38,7 +28,10 @@ if ($result && $result->num_rows > 0) {
                 <div class="pizza-info">
                     <h2>{$row['nome']}</h2>
                     <p>Preço: R$ {$row['preco']}</p>
-                    <button class="order-button">Adicionar ao carrinho</button>
+                    <form method="POST" action="adicionar_ao_carrinho.php">
+                        <input type="hidden" name="produto_id" value="{$row['id']}">
+                        <button type="submit" class="order-button">Adicionar ao carrinho</button>
+                    </form>
                 </div>
             </div>
         HTML;
@@ -47,17 +40,9 @@ if ($result && $result->num_rows > 0) {
     $page_article .= "<p>Não há produtos disponíveis no momento.</p>";
 }
 
-// Finaliza a seção de pizzas
 $page_article .= '</section>';
 
-// Inclui o cabeçalho do template nesta página:
-
 require($_SERVER['DOCUMENT_ROOT'] . '/_header.php');
-
-// Exibe o conteúdo da página:
 echo "<article>{$page_article}</article>";
-
-
-
-// Inclui o rodapé do template nesta página.
 require($_SERVER['DOCUMENT_ROOT'] . '/_footer.php');
+?>

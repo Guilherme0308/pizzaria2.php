@@ -1,0 +1,70 @@
+
+/* Importa CSS do template */
+@import url('/style.css');
+
+.carrinho {
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.produto-carrinho {
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.produto-imagem {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.quantidade {
+    display: flex;
+    align-items: center;
+}
+
+.menos, .mais {
+    border: none;
+    background: none;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.quantidade-input {
+    width: 50px;
+    text-align: center;
+}
+
+.remover {
+    background-color: #ff3333;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.total {
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.btn-checkout {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}

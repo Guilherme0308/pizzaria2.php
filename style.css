@@ -160,40 +160,49 @@ header {
     padding: 20px;
     gap: 20px;
 }
-
+/* Pizza Card Styles */
 .pizza-card {
-    background-color: #c00000;
-    color: white;
-    width: 256px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    text-align: center;
-}
-
-.pizza-image {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .pizza-image {
     width: 100%;
-    padding: 12px;
-}
-
-.pizza-info h2 {
-    margin: 10px 0;
-    font-size: 1.5em;
-}
-
-.order-button {
-    background-color: #32CD32;
-    color: white;
+    height: 200px; /* Adjust image height as needed */
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  .pizza-info {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .pizza-info h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  .pizza-info p {
+    font-size: 14px;
+    color: #777;
+  }
+  
+  .order-button {
+    background-color: #ff6600; /* Orange button color */
+    color: #fff;
+    border: none;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: auto;
-    transition: background-color 0.3s;
-}
-
-.order-button:hover {
-    background-color: #28a745;
-}
+  }
+  
+  .order-button:hover {
+    background-color: #ff8833;
+  }
 
 /* Formulário de Cadastro e Login */
 .logi, .cadast {
