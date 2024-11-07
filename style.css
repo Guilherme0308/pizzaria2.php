@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Fredoka", sans-serif;
+}
+
+body {
+    background-image: url("asse");
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+main{
+    height: 100vh;
+}
+
+/* Estilo para cabeçalho */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    background-color: #a30000;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-container .logo {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.logo-container h1 {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.logo-container h1 small {
+    font-size: 0.75rem;
+    color: #ccc;
+}
+
+.main-nav {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.main-nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.main-nav a:hover {
+    background-color: #555;
+}
+
+.header-extras {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Busca */
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: #444;
+    padding: 8px;
+    border-radius: 20px;
+}
+
+.search-container input[type="text"] {
+    background: none;
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: 5px;
+    font-size: 1rem;
+}
+
+.search-container button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* Carrinho */
+.cart {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.cart-icon {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.cart-count {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: #f00;
+    color: #fff;
+    font-size: 0.8rem;
+    padding: 2px 5px;
+    border-radius: 50%;
+}
+
+/* Banner */
+.banner {
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.banner-button {
+    padding: 16px 32px;
+    background-color: #c00000;
+    color: #fff;
+    border-radius: 25px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Cards de Pizza */
+.pizzas-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 20px;
+}
+
+.pizza-card {
+    background-color: #c00000;
+    color: white;
+    width: 256px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    text-align: center;
+}
+
+.pizza-image {
+    width: 100%;
+    padding: 12px;
+}
+
+.pizza-info h2 {
+    margin: 10px 0;
+    font-size: 1.5em;
+}
+
+.order-button {
+    background-color: #32CD32;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: auto;
+    transition: background-color 0.3s;
+}
+
+.order-button:hover {
+    background-color: #28a745;
+}
+
+/* Formulário de Cadastro e Login */
+.logi, .cadast {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+}
+
+.login-box, .box-cadast {
+    background-color: #ffca00;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.login-box h1, .box-cadast h1 {
+    font-size: 45px;
+    color: #a30000;
+}
+
+.login-box p, .box-cadast p {
+    font-size: 14px;
+    color: #666;
+}
+
+.box-item input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+button.btn {
+    background-color: orangered;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+}
+
+button.btn:hover {
+    background-color: #c4de5c;
+}
+
+/* Seções Diversas */
+.profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sobre {
+    margin: 128px;
+    padding: 30px;
+    background-color: rgba(255, 202, 0, 0.6);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.title-sobre {
+    text-align: center;
+    color: #a30000;
+    font-size: 25px;
+}
+
+/* Rodapé */
+.footer-wrapper {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.footer-logo {
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+.footer-slogan, .footer-nav h3, .footer-social h3 {
+    color: #bbb;
+}
+
+.footer-nav ul li a:hover, .footer-social a:hover {
+    color: #ffa600;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #222;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .main-nav, .header-extras {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 1.5rem;
+        color: #fff;
+        background: none;
+        border: none;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+}
