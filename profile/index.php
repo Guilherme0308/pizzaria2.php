@@ -75,62 +75,6 @@ $stmt->close();
 require($_SERVER['DOCUMENT_ROOT'] . '/_header.php');
 ?>
 
-<style>
-    .profile {
-        display: flex;
-        align-items: flex-start;
-        gap: 2rem;
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 2rem;
-        background-color: #f7f7f7;
-        border-radius: 10px;
-    }
-
-    .profile-avatar img {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        object-fit: cover;
-    }
-
-    .profile-info {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .profile-details label {
-        font-weight: bold;
-    }
-
-    .profile-details input[type="text"],
-    .profile-details input[type="password"],
-    .profile-details input[type="file"],
-    .profile-details input[type="submit"] {
-        width: 100%;
-        padding: 0.5rem;
-        margin-top: 0.5rem;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-    }
-
-    .profile-details input[type="submit"] {
-        cursor: pointer;
-        background-color: #4CAF50;
-        color: white;
-        font-weight: bold;
-        border: none;
-    }
-
-    .logout-button {
-        display: inline-block;
-        margin-top: 1rem;
-        color: #d9534f;
-        text-decoration: none;
-        font-weight: bold;
-    }
-</style>
 
 <div class="profile">
     <div class="profile-avatar">

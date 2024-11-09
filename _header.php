@@ -35,22 +35,19 @@
                 <span>Sobre</span>
             </a>
             <div class="user-profile">
-    <?php if (isset($_SESSION['user_id'])) : ?>
-        <a href="/profile" title="Ver perfil de <?php echo $_SESSION['name']; ?>" class="menu-user">
-            <!-- Verificação para imagem de avatar -->
-            <img src="<?php echo !empty($_SESSION['avatar']) ? $_SESSION['avatar'] : '/img/default-avatar.png'; ?>" 
-                 alt="Foto de perfil de <?php echo $_SESSION['name']; ?>" class="user-avatar">
-            <span>Perfil</span>
-        </a>
-    <?php else : ?>
-        <a href="/login" title="Logue-se...">
-            <i class="fa-solid fa-user fa-fw"></i> Entrar
-        </a>
-    <?php endif; ?>
-</div>
-
-
-
+                <?php if (isset($_SESSION['user_id'])) : ?>
+                    <a href="/profile" title="Ver perfil de <?php echo $_SESSION['name']; ?>" class="menu-user">
+                        <!-- Verificação para imagem de avatar -->
+                        <img src="<?php echo !empty($_SESSION['avatar']) ? $_SESSION['avatar'] : '/img/default-avatar.png'; ?>" 
+                             alt="Foto de perfil de <?php echo $_SESSION['name']; ?>" class="user-avatar">
+                        <span>Perfil</span>
+                    </a>
+                <?php else : ?>
+                    <a href="/login" title="Logue-se...">
+                        <i class="fa-solid fa-user fa-fw"></i> Entrar
+                    </a>
+                <?php endif; ?>
+            </div>
         </nav>
 
         <!-- Carrinho e campo de busca -->
@@ -62,5 +59,5 @@
                 </a>
             </div>
         </div>
-        
     </header>
+
