@@ -23,30 +23,7 @@ function changeBannerImage() {
 
 window.onload = changeBannerImage;
 
-
-// Atualiza o valor total com base na quantidade de produtos
-function atualizarTotal() {
-    const preco = parseFloat(document.getElementById('valor_produto').innerText.replace('Preço: R$ ', '').replace(',', '.'));
-    const quantidade = parseInt(document.getElementById('quantidade_produto').value);
-    const total = (preco * quantidade).toFixed(2).replace('.', ',');
-
-    document.getElementById('total_produto').innerText = 'R$ ' + total;
-}
-
-// Função para remover o produto
-function removerProduto() {
-    document.querySelector('.produto').style.display = 'none';
-    document.getElementById('total_produto').innerText = 'R$ 0,00';
-}
-
-// Função para finalizar a compra
-function finalizarCompra() {
-    const total = document.getElementById('total_produto').innerText;
-    if (total === 'R$ 0,00') {
-        alert('Seu carrinho está vazio.');
-    } else {
-        alert('Compra finalizada!');
-        // Redirecionar para uma página de confirmação ou similar
-        window.location.href = '/index.html';
-    }
-}
+ // Atualiza o número de itens no carrinho
+ const cartCount = document.querySelector('.cart-count');
+ const cartItems = "<?php echo isset($_SESSION['carrinho']) ? json_encode($_SESSION['carrinho']) : '[]; ?> "
+ cartCount.textContent = cartItems.length > 0 ? cartItems.length : '0';

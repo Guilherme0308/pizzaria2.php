@@ -1,58 +1,79 @@
 <?php
-
 // Inclui o arquivo de configuração global do aplicativo:
 require($_SERVER['DOCUMENT_ROOT'] . '/_config.php');
 
-// Processar o formulário de login
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = $_POST['email'];
-    $senha = $_POST['password'];
-
-    // Preparar a consulta SQL com prepared statements para evitar SQL injection
-    $stmt = $conn->prepare("SELECT * FROM users WHERE email = ?");
-    $stmt->bind_param("s", $email);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        // Verificar a senha usando password_verify
-        if (password_verify($senha, $row['password'])) {
-            // Iniciar a sessão
-            session_start();
-            $_SESSION['user_id'] = $row['id'];
-            $_SESSION['user_name'] = $row['name'];
-
-            // Redirecionar para a página de perfil
-            header("Location: /profile");
-            exit();
-        } else {
-        }
-    } else {
-        echo "Usuário não encontrado.";
+// Processa o formulário se o método HTTP for POST
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Inicia a sessão, se ainda não tiver sido iniciada
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
     }
+
+    // Sanitiza e valida os dados dos campos
+    $email = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL);
+    $senha = $_POST['senha'];
+
+    // Verifica se os campos obrigatórios estão preenchidos
+    if (empty($email) || empty($senha)) {
+        echo "<script>alert('Por favor, preencha todos os campos.');</script>";
+        exit;
+    }// Verifica se o e-mail existe no banco de dados
+$stmt = $conn->prepare("SELECT id, nome, senha, avatar FROM users WHERE email = ?");
+$stmt->bind_param("s", $email);
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows === 0) {
+    echo "<script>alert('E-mail ou senha incorretos.');</script>";
+    exit;
+}
+
+// Obtém os dados do usuário
+$row = $result->fetch_assoc();
+$senhaHash = $row['senha'];
+$avatar = $row['avatar'];
+
+// Verifica a senha
+if (password_verify($senha, $senhaHash)) {
+    session_start();
+    session_regenerate_id(true);
+
+    // Armazena os dados na sessão
+    $_SESSION['user_id'] = $row['id'];
+    $_SESSION['email'] = $email;
+    $_SESSION['name'] = $row['nome'];
+    $_SESSION['avatar'] = !empty($avatar) ? $avatar : '/img/default-avatar.png'; // Avatar padrão se vazio
+
+    header("Location: /"); // Redireciona para a página inicial
+    exit;
+} else {
+    echo "<script>alert('E-mail ou senha incorretos.');</script>";
+    exit;
+}
+
+
 
     $stmt->close();
 }
 
 require($_SERVER['DOCUMENT_ROOT'] . '/_header.php');
-// Formulário de login
 ?>
+
 <div class="main-login">
-    <form method="post" action="">
+    <h2>Login</h2>
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email" required><br><br>
 
-        <label for="password">Senha:</label>
-        <input type="password" id="password" name="password" required>
-        <a href="/cadastro">cadastre-se</a>
-        <button type="submit">Entrar</button>
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" required><br><br>
 
+        <input type="submit" name="submit" value="Login">
+        <a href="/cadastro">Cadastre-se</a>
     </form>
 </div>
-<?php
-// Inclui o rodapé do template nesta página.
-require($_SERVER['DOCUMENT_ROOT'] . '/_footer.php');
 
+<?php
+require($_SERVER['DOCUMENT_ROOT'] . '/_footer.php');
 $conn->close();
 ?>

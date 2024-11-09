@@ -31,6 +31,6 @@ if (isset($_POST['produto_id'])) {
 }
 
 // Redireciona de volta para a página onde os produtos estão sendo listados
-header('Location: index.php'); // Ou a página que você desejar redirecionar
+header('Location: /'); // Ou a página que você desejar redirecionar
 exit;
 ?>

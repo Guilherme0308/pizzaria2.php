@@ -1,6 +1,9 @@
 <?php
 require($_SERVER['DOCUMENT_ROOT'] . '/_config.php');
-session_start(); // Inicia a sessão para manipular o carrinho
+// Inicia a sessão se não estiver iniciada
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 // Verifica se o carrinho já existe na sessão
 if (!isset($_SESSION['carrinho'])) {

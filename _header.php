@@ -34,29 +34,33 @@
                 <i class="fa-solid fa-circle-info fa-fw"></i>
                 <span>Sobre</span>
             </a>
+            <div class="user-profile">
+    <?php if (isset($_SESSION['user_id'])) : ?>
+        <a href="/profile" title="Ver perfil de <?php echo $_SESSION['name']; ?>" class="menu-user">
+            <!-- Verificação para imagem de avatar -->
+            <img src="<?php echo !empty($_SESSION['avatar']) ? $_SESSION['avatar'] : '/img/default-avatar.png'; ?>" 
+                 alt="Foto de perfil de <?php echo $_SESSION['name']; ?>" class="user-avatar">
+            <span>Perfil</span>
+        </a>
+    <?php else : ?>
+        <a href="/login" title="Logue-se...">
+            <i class="fa-solid fa-user fa-fw"></i> Entrar
+        </a>
+    <?php endif; ?>
+</div>
 
 
-            <!-- Perfil do usuário ou link de login -->
-            <?php if (isset($usuario)) : ?>
-                <a href="/profile" title="Ver perfil de <?php echo $usuario['name']; ?>" class="menu-user">
-                    <img src="<?php echo $usuario['avatar']; ?>" alt="Foto de perfil de <?php echo $usuario['name']; ?>" class="user-avatar">
-                    <span>Perfil</span>
-                </a>
-            <?php else : ?>
-                <a href="/login" title="Logue-se...">
-                    <i class="fa-solid fa-user fa-fw"></i>
-                    <span>Entrar</span>
-                </a>
-            <?php endif; ?>
+
         </nav>
 
         <!-- Carrinho e campo de busca -->
         <div class="header-extras">
             <div class="cart">
-                <a href="carrinho" title="Carrinho">
+                <a href="/carrinho" title="Carrinho">
                     <i class="fa fa-shopping-cart cart-icon"></i>
-                    <span class="cart-count"></span>
+                    <span class="cart-count"><?php echo isset($_SESSION['carrinho']) ? count($_SESSION['carrinho']) : '0'; ?></span>
                 </a>
             </div>
         </div>
+        
     </header>

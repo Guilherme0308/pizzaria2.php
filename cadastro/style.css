@@ -1,69 +1,76 @@
 /* Importa folha de estilos do tema */ 
-@import url('../style.css');
+@import url('/style.css');
 /* Estilos gerais para a página de cadastro */
+
+/* Estilos gerais */
+
 .main-cadastro {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f7f7f7;
+    background-color: #fff;
+    padding: 20px 40px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
 }
 
 .main-cadastro h2 {
-    color: #333;
-    font-size: 28px;
-    margin-bottom: 20px;
     text-align: center;
+    color: #333;
+    margin-bottom: 20px;
 }
 
-form {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    max-width: 400px;
-}
-
-label {
-    display: block;
+form label {
+    color: #555;
     font-size: 14px;
-    color: #666;
-    margin-bottom: 8px;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"] {
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="number"] {
     width: 100%;
     padding: 10px;
+    margin: 8px 0 16px;
     border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 15px;
+    border-radius: 4px;
     font-size: 16px;
+    box-sizing: border-box;
 }
 
-input[type="submit"] {
-    background-color: #4CAF50;
+form input[type="submit"] {
+    width: 100%;
+    background-color: #ff4500;
     color: #fff;
-    padding: 12px 20px;
+    padding: 12px;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.3s ease-in-out;
 }
 
-input[type="submit"]:hover {
-    background-color: #3e8e41;
+form input[type="submit"]:hover {
+    background-color: #e63900;
 }
 
-.main-cadastro a {
-    color: #333;
+a {
+    color: #ff4500;
     text-decoration: none;
-    margin-top: 10px;
-    font-size: 14px;
+    display: inline-block;
+    margin-top: 16px;
+    text-align: center;
+    width: 100%;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Ajustes para o layout do formulário */
+form .box-group {
+    display: flex;
+    gap: 10px;
+}
+
+form .box-group input {
+    width: 100%;
 }
