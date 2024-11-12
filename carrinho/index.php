@@ -35,8 +35,6 @@ function atualizarCarrinho() {
 // Atualiza o carrinho com base nas ações de POST (quantidade ou remoção)
 atualizarCarrinho();
 
-$page_article = '<h1>Carrinho de Compras</h1>';
-
 if (!empty($_SESSION['carrinho'])) {
     $total = 0;
     $page_article .= '<div class="carrinho">';
@@ -75,7 +73,7 @@ if (!empty($_SESSION['carrinho'])) {
     $page_article .= '<a href="/checkout" class="btn-checkout">Finalizar Compra</a>';
     $page_article .= '</div>';
 } else {
-    $page_article .= '<p>Seu carrinho está vazio.</p>';
+    $page_article .= '<p class="vazio">Seu carrinho está vazio.</p>';
 }
 
 require($_SERVER['DOCUMENT_ROOT'] . '/_header.php');

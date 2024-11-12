@@ -5,13 +5,13 @@
 .carrinho {
     margin: 20px auto;
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 202, 0, 0.5);
+
 }
 
 .produto-carrinho {
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #a30000;
     padding: 10px;
     display: flex;
     justify-content: space-between;
@@ -43,7 +43,7 @@
 }
 
 .remover {
-    background-color: #ff3333;
+    background-color: #a30000;
     color: #fff;
     border: none;
     padding: 5px 10px;
@@ -54,10 +54,12 @@
 .total {
     font-weight: bold;
     margin-top: 20px;
+    font-size: 20px;
+    padding-bottom: 10px;
 }
 
 .btn-checkout {
-    background-color: #4CAF50;
+    background-color: #a5c135;
     color: white;
     padding: 15px 32px;
     text-align: center;
@@ -67,4 +69,16 @@
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 4px;
+}
+
+.btn-checkout:hover {
+    background-color: #9ffa02;
+}
+
+.vazio{
+    color: #a30000;
+    padding: 20px;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
 }
