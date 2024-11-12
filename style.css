@@ -5,16 +5,16 @@
     box-sizing: border-box;
     font-family: "Fredoka", sans-serif;
 }
+
 body {
-    background-image: url("asse");
-    background-size: cover;
-    background-repeat: no-repeat;
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #ffefce;
 }
+
 main{
     height: 100vh;
 }
+
 /* Estilo para cabeçalho */
 header {
     display: flex;
@@ -120,14 +120,20 @@ header {
 }
 .banner-button {
     padding: 16px 32px;
-    background-color: #c00000;
+    background-color: #a30000;
     color: #fff;
+    text-decoration: none;
     border-radius: 25px;
     font-size: 1.5rem;
     cursor: pointer;
     border: none;
     transition: background-color 0.3s, transform 0.3s;
 }
+
+.banner-button:hover {
+    background-color: #fa0505;
+}
+
 /* Cards de Pizza */
 .pizzas-content {
     display: flex;
@@ -135,7 +141,9 @@ header {
     flex-wrap: wrap;
     padding: 20px;
     gap: 20px;
-}.pizza-card {
+}
+
+.pizza-card {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -180,7 +188,7 @@ header {
 
 /* Styling for the 'Add to Cart' button */
 .order-button {
-    background-color: #FF5733; /* Orangered */
+    background-color: #a30000; /* Orangered */
     color: white;
     padding: 10px 20px;
     border: none;
@@ -191,7 +199,7 @@ header {
 }
 
 .order-button:hover {
-    background-color: #e04e28;
+    background-color: #fa0505;
 }
 
 /* Responsive Design */
