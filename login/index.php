@@ -60,16 +60,18 @@ require($_SERVER['DOCUMENT_ROOT'] . '/_header.php');
 ?>
 
 <div class="main-login">
-    <h2>Login</h2>
     <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
+        <h1>Login</h1>
+
+        <p>Ainda não é membro? <a href="/cadastro">Cadastre-se</a></p>
+
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required><br><br>
 
         <label for="senha">Senha:</label>
         <input type="password" id="senha" name="senha" required><br><br>
 
-        <input type="submit" name="submit" value="Login">
-        <a href="/cadastro">Cadastre-se</a>
+        <input type="submit" name="submit" value="ACESSAR">
     </form>
 </div>
 
