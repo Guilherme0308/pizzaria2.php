@@ -61,8 +61,11 @@ require($_SERVER['DOCUMENT_ROOT'] . '/_header.php');
 ?>
 
 <div class="main-cadastro">
-    <h2>Cadastro</h2>
     <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
+        <h1>Cadastro</h1>
+
+        <p>Já é membro? <a href="/login">Login</a></p>
+
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" required><br><br>
 
@@ -96,8 +99,7 @@ require($_SERVER['DOCUMENT_ROOT'] . '/_header.php');
         <label for="estado">Estado:</label>
         <input type="text" id="estado" name="estado" required><br><br>
 
-        <input type="submit" name="submit" value="Cadastrar">
-        <a href="/login">Logue-se</a>
+        <input type="submit" name="submit" value="ENVIAR">
     </form>
 </div>
 
