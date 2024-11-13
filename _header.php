@@ -7,7 +7,7 @@
     <link rel="shortcut icon" href="/img/favicon.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <title><?php echo $site_name; ?> .:. <?php echo $page_title; ?></title>
+    <title>Xêro Pizzaria | A melhor Pizzaria!</title>
 </head>
 
 <body>
@@ -17,7 +17,7 @@
             <a href="/" title="Página inicial">
                 <img src="<?php echo $site_logo; ?>" alt="Logotipo de <?php echo $site_name; ?>" class="logo">
             </a>
-            <h1><?php echo $site_name; ?><small><?php echo $site_slogan; ?></small></h1>
+            <h1><?php echo $site_slogan; ?></h1>
         </div>
 
         <!-- Barra de navegação -->
@@ -55,7 +55,7 @@
             <div class="cart">
                 <a href="/carrinho" title="Carrinho">
                     <i class="fa fa-shopping-cart cart-icon"></i>
-                    <span class="cart-count"><?php echo isset($_SESSION['carrinho']) ? count($_SESSION['carrinho']) : '0'; ?></span>
+                    <span class="cart-count"><?php echo isset($_SESSION['carrinho'])?></span>
                 </a>
             </div>
         </div>
