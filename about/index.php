@@ -6,7 +6,7 @@ require($_SERVER['DOCUMENT_ROOT'] . '/_header.php');
 <section>
         <div class="sobre">
 
-            <h1 class="title-sobre"> Sobre Xerô Pizzaria </h1>
+            <h1 class="title-sobre"> Sobre Xêro Pizzaria </h1>
 
             <p class="primari-text">
                 Inauguramos uma unidade no Rio de Janeiro, no bairro Campo grande. Investimos em tecnologia e delivery
@@ -28,7 +28,7 @@ require($_SERVER['DOCUMENT_ROOT'] . '/_header.php');
             <ul>
                 <li>E-mail: pizzariaxero@email.com</li>
 
-                <li>Serviço disponível nas áreas de entrega Xero Pizza, todos os dias, de acordo com o horário de
+                <li>Serviço disponível nas áreas de entrega Xêro Pizza, todos os dias, de acordo com o horário de
                     funcionamento de cada loja.
                     Todas as promoções expostas não são cumulativas entre si ou com outras promoções e descontos.
                     Cobramos taxa de entrega.
