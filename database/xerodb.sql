@@ -17,43 +17,18 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
---
--- Banco de dados: `xerodb`
---
+CREATE DATABASE xerodb;
 
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `cartao`
---
-
-CREATE TABLE `cartao` (
-  `id` int(11) NOT NULL,
-  `nome` varchar(100) NOT NULL,
-  `numero` int(11) NOT NULL,
-  `cvv` int(11) NOT NULL,
-  `validade_mes` int(11) NOT NULL,
-  `validade_ano` year(4) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `produtos`
---
+USE xerodb;
 
 CREATE TABLE `produtos` (
-  `id` int(11) NOT NULL,
+  `id` int PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `nome` varchar(255) NOT NULL,
   `preco` decimal(10,2) NOT NULL,
   `categoria` varchar(255) NOT NULL,
   `descricao` varchar(255) NOT NULL,
   `imagem` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Despejando dados para a tabela `produtos`
---
 
 INSERT INTO `produtos` (`id`, `nome`, `preco`, `categoria`, `descricao`, `imagem`) VALUES
 (1, 'Margherita', 35.00, 'pizza salgada', 'Molho de tomate, mussarela, manjericão fresco, azeite de oliva', '/src/img/pizza-5501065_640.jpg'),
@@ -83,14 +58,8 @@ INSERT INTO `produtos` (`id`, `nome`, `preco`, `categoria`, `descricao`, `imagem
 (25, 'Cerveja', 6.00, 'bebidas', 'cerveja imperio em lata', '/src/img/bebidaalcoolimperio.png'),
 (26, 'Cerveja Itaipava', 6.00, 'bebidas', 'cerveja itaipava em lata', '/src/img/bebidaalcoolitaipava.png');
 
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `users`
---
-
 CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
+  `id` int PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `avatar` varchar(255) NOT NULL,
   `nome` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
@@ -103,32 +72,6 @@ CREATE TABLE `users` (
   `estado` varchar(4) NOT NULL,
   `senha` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Despejando dados para a tabela `users`
---
-
-INSERT INTO `users` (`id`, `avatar`, `nome`, `email`, `telefone`, `cep`, `endereco`, `numero`, `complemento`, `cidade`, `estado`, `senha`) VALUES
-(0, '', 'mari', 'mari@neuza.com', '', '', '', '', '', '', '', '$2y$10$IqaOziLn0S4P1a7ndd9EpuTHjB46nBnIykYP8yWbTJiYxk7DFsiam'),
-(0, '/src/avatars/0.jpg', 'GUILHERME ALVES DE SOUZA GREGORIO', 'gilhermeglegrorio67@gmail.com', '21996763575', '23065009', 'Av.tamandare', '107', 'PACIENCIa', 'Angra dos Reis', 'RJ', '$2y$10$NIhSWtug99EGvKvdQsL5Z.Kn1vXMzzoTy3ERUgbZSdCG.jmfhz/pW'),
-(0, '/src/avatars/0.jpg', 'Guilgo', 'Guilhermegregorio01@outlook.com', '21996763575', '23065009', 'Av.tamandare', '107', 'PACIENCIa', 'Angra dos Reis', 'RJ', '$2y$10$OIFOsdjPQnCDrM.eDJ/iUu4iaFtZfxaGaTD9LzR0HKoSPtAEVtx/K');
-
---
--- Índices para tabelas despejadas
---
-
---
--- Índices de tabela `cartao`
---
-ALTER TABLE `cartao`
-  ADD PRIMARY KEY (`id`);
-
---
--- Índices de tabela `produtos`
---
-ALTER TABLE `produtos`
-  ADD PRIMARY KEY (`id`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

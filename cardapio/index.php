@@ -34,4 +34,4 @@ $page_article .= '</section>';
 require($_SERVER['DOCUMENT_ROOT'] . '/_header.php');
 echo "<article>{$page_article}</article>";
 
-require($_SERVER['DOCUMENT_ROOT'] . '/_header.php');
+require($_SERVER['DOCUMENT_ROOT'] . '/_footer.php');

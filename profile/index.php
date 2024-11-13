@@ -97,7 +97,7 @@ require($_SERVER['DOCUMENT_ROOT'] . '/_header.php');
 
             <input type="submit" value="Atualizar Perfil">
         </form>
-        <a href="/logout.php" class="logout-button">Sair</a>
+        <a href="/logout.php" class="logout-button">SAIR</a>
     </div>
 </div>
 

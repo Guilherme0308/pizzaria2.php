@@ -7,9 +7,10 @@ if (!isset($_SESSION['user_id'])) {
     header("Location: /login"); // Redireciona para a página de login
     exit;
 }
+
 // Função para atualizar o carrinho
 function atualizarCarrinho() {
-    // Verifica se foi feita alguma alteração no carrinho via GET ou POST
+    // Verifica se foi feita alguma alteração no carrinho via POST
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Atualizar quantidade do produto
         if (isset($_POST['produto_id']) && isset($_POST['quantidade'])) {
@@ -35,6 +36,8 @@ function atualizarCarrinho() {
 // Atualiza o carrinho com base nas ações de POST (quantidade ou remoção)
 atualizarCarrinho();
 
+// Gerar o conteúdo do carrinho
+$page_article = ''; // Certifique-se de que $page_article esteja inicializado
 if (!empty($_SESSION['carrinho'])) {
     $total = 0;
     $page_article .= '<div class="carrinho">';

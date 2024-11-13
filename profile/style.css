@@ -7,9 +7,9 @@
   flex-wrap: wrap;
   gap: 2rem;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 40px auto;
   padding: 2rem;
-  background-color: #f7f7f7;
+  background-color: rgba(255, 202, 0, 0.5);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -42,13 +42,14 @@
   font-size: 1.8rem;
   margin-bottom: 1rem;
   color: #333;
+  color: #a30000;
 }
 
 .profile-details label {
   font-weight: bold;
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
-  color: #333;
+  color: #a30000;
 }
 
 .profile-details input[type="text"],
@@ -65,34 +66,40 @@
 
 .profile-details input[type="text"],
 .profile-details input[type="password"] {
-  background-color: #fff;
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #a30000;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  background-color: rgba(255, 202, 0, 0.1);
+  outline: none;
 }
 
 .profile-details input[type="submit"] {
-  cursor: pointer;
-  background-color: #4CAF50;
-  color: white;
-  font-weight: bold;
-  border: none;
-  transition: background-color 0.3s ease;
+    background-color: #a5c135;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out;
+    width: 100%;
 }
 
-.profile-details input[type="submit"]:hover {
-  background-color: #45a049;
+input[type="submit"]:hover {
+    background-color: #9ffa02;
 }
 
 .logout-button {
   display: inline-block;
-  margin-top: 1rem;
-  color: #d9534f;
+  padding: 5px;  
+  color: #a30000;
   text-decoration: none;
   font-weight: bold;
-  font-size: 1.2rem;
-  transition: color 0.3s ease;
-}
-
-.logout-button:hover {
-  color: #c9302c;
+  font-size: 20px;
+  align-self: center;
 }
 
 /* Responsividade */

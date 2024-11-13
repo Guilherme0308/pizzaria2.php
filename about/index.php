@@ -6,7 +6,7 @@ require($_SERVER['DOCUMENT_ROOT'] . '/_header.php');
 <section>
         <div class="sobre">
 
-            <h1 class="title-sobre"> Sobre Nossa Xerô Pizzaria </h1>
+            <h1 class="title-sobre"> Sobre Xerô Pizzaria </h1>
 
             <p class="primari-text">
                 Inauguramos uma unidade no Rio de Janeiro, no bairro Campo grande. Investimos em tecnologia e delivery
@@ -23,10 +23,10 @@ require($_SERVER['DOCUMENT_ROOT'] . '/_header.php');
             </p>
 
             <p class="primari-text">
-            <h1 class="more-info"> Para mais informações </h1>
+            <h1 class="more-sobre"> Para mais informações </h1>
 
             <ul>
-                <li>E-mail: pizzariaxero.com</li>
+                <li>E-mail: pizzariaxero@email.com</li>
 
                 <li>Serviço disponível nas áreas de entrega Xero Pizza, todos os dias, de acordo com o horário de
                     funcionamento de cada loja.
@@ -42,43 +42,21 @@ require($_SERVER['DOCUMENT_ROOT'] . '/_header.php');
                 <li>Imagens meramente ilustrativas.</li>
             </ul>
 
-            </p>
-
-            <p class="primari-text">XERÔ PIZZA BRASIl, Rua Capricorniano 5977 - 2 andar - Campo Grande , Rio de
-                janeiro/Rj
-                - 22579-998</p>
-
-            <p class="primari-text">
-            <h1 class="more-info">Este projeto foi criado por:</h1>
+            <h1 class="more-sobre">Este projeto foi criado por:</h1>
             <ul>
-                <li>Guilherme Alves de Souza Gregório</li>
-                <li>João Tavares Rigueti de Oliveira</li>
-                <li>Laryssa Esper Pereira</li>
-                <li>Sarah Cristina Cabral</li>
+                <li><a href="https://github.com/Guilherme0308">Guilherme Alves de Souza Gregório</a></li>
+                <li><a href="https://github.com/Jaum7809">João Tavares Rigueti de Oliveira</a></li>
+                <li><a href="https://github.com/laryssaesper">Laryssa Esper Pereira</a></li>
+                <li><a href="https://github.com/SarahCristinaCabralLopes">Sarah Cristina Cabral</a></li>
             </ul>
-            </p>
 
+            <p class="trabalho">
+            Como requisito para obtenção de nota final na disciplina de HTML, CSS, JavaScript e PHP
+            </p>
         </div>
 
     </section>
-    <section class="sobre">
-        <h1>Sobre a Xerô Pizzaria</h1>
 
-        <p>Este projeto foi criado por:</p>
-        <ul>
-            <?php
-            // Array com os nomes dos criadores
-            $criadores = array("Guilherme Alves de Souza Gregório", "João Tavares Rigueti de Oliveira", "Laryssa Esper Pereira", "Sarah Cristina Cabral");
-
-            // Loop para exibir os nomes
-            foreach ($criadores as $criador) {
-                echo "<li>$criador</li>";
-            }
-            ?>
-        </ul>
-    </section>
-</body>
-</html>
 <?php
 require($_SERVER['DOCUMENT_ROOT'] . '/_footer.php');
 ?>
